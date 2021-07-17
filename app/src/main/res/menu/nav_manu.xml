@@ -1,0 +1,27 @@
+
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/item_account"
+            android:title="My Account"
+            />
+        <item android:id="@+id/item_orders"
+            android:title="My Orders"
+            />
+        <item android:id="@+id/item_category"
+            android:title="Category" />
+
+    </group>
+
+    <item
+        android:id="@+id/item_rate_app"
+        android:title="Rate our app" />
+    <item
+        android:id="@+id/item_refer"
+        android:title="Refer and Run" />
+    <item
+        android:id="@+id/item_logout"
+        android:title="Logout" />
+
+</menu>

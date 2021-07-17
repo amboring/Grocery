@@ -1,0 +1,61 @@
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent">
+    <include layout="@layout/app_bar"/>
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="20dp"
+        android:weightSum="10"
+        android:background="@color/rice"
+        xmlns:android="http://schemas.android.com/apk/res/android" >
+        <Spinner
+            android:id="@+id/spinner_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
+
+        <!--        <EditText android:id="@+id/edittext_type"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:hint=" Address Type"/>-->
+        <EditText android:id="@+id/edittext_house"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint=" House"/>
+
+        <EditText android:id="@+id/edittext_street"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint=" Street"/>
+        <EditText android:id="@+id/edittext_city"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint=" City"/>
+        <EditText android:id="@+id/edittext_zipcode"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:inputType="number"
+            android:layout_weight="1"
+            android:hint=" Zipcode"/>
+
+
+        <Button android:id="@+id/button_save"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:textSize="24dp"
+            android:backgroundTint="@color/peach"
+            android:text="Save"/>
+
+
+    </LinearLayout>
+</LinearLayout>

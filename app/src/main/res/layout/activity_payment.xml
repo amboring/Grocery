@@ -1,0 +1,239 @@
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:weightSum="8"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/app_bar"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <ImageView android:id="@+id/image_view_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/counter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:id="@+id/free_shipping_holder"
+            android:layout_width="match_parent"
+            android:weightSum="5"
+            app:layout_constraintTop_toBottomOf="@id/image_view_counter"
+            app:layout_constraintBottom_toTopOf="@id/price_block"
+            android:layout_height="wrap_content">
+            <TextView android:id="@+id/text_view_free_shipping"
+               android:layout_width="0dp"
+                android:textSize="12dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                />
+            <Button android:id="@+id/button_make_75"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:textSize="16dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/peach"
+                android:textAllCaps="false"
+                android:text="Make it $75!"/>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/price_block"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline_address_payment"
+            android:padding="10dp"
+            android:layout_weight="2">
+            <TextView
+                app:layout_constraintStart_toStartOf="@id/price_block"
+                app:layout_constraintTop_toTopOf="@id/price_block"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/gray"
+                android:text="Subtotal"/>
+            <TextView android:id="@+id/text_view_pay"
+                app:layout_constraintEnd_toEndOf="@id/price_block"
+                app:layout_constraintTop_toTopOf="@id/price_block"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="12dp"
+                android:text="total"/>
+            <TextView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_view_pay"
+                android:layout_width="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/gray"
+                android:layout_height="wrap_content"
+                android:text="Discount"/>
+            <TextView android:id="@+id/text_view_discount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_view_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/attention"
+                android:text="discount"/>
+            <TextView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_view_discount"
+                android:layout_width="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/gray"
+                android:layout_height="wrap_content"
+                android:text="Delivery"/>
+            <TextView android:id="@+id/text_view_delivery"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_view_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="12dp"
+                android:text="delivery"/>
+            <TextView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_view_delivery"
+                android:layout_width="wrap_content"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="Order Amount"/>
+            <TextView android:id="@+id/text_view_total"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/text_view_delivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="12dp"
+                android:text="total"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/address_block"
+            app:layout_constraintTop_toBottomOf="@id/guideline_address_payment"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content">
+            <TextView android:id="@+id/text_view_address_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ship to : "
+                android:textStyle="bold"
+                android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/address_block"
+                app:layout_constraintStart_toStartOf="@id/address_block"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/text_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_view_address_title"
+                app:layout_constraintVertical_bias="1.0">
+
+                <TextView
+                    android:id="@+id/text_view_house"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="house number"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/text_address"
+                    app:layout_constraintTop_toTopOf="@id/text_address" />
+
+                <TextView
+                    android:id="@+id/text_view_street"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="street"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@id/text_view_house"
+                    app:layout_constraintTop_toTopOf="@id/text_address" />
+
+                <TextView
+                    android:id="@+id/text_view_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="city"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/text_address"
+                    app:layout_constraintTop_toBottomOf="@id/text_view_house" />
+
+                <TextView
+                    android:id="@+id/text_view_zip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="zip code"
+                    android:textSize="15dp"
+                    app:layout_constraintEnd_toEndOf="@id/text_address"
+                    app:layout_constraintStart_toEndOf="@id/text_view_city"
+                    app:layout_constraintTop_toBottomOf="@id/text_view_street" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText android:id="@+id/edit_text_promo"
+            app:layout_constraintTop_toBottomOf="@id/address_block"
+            app:layout_constraintBottom_toTopOf="@id/button_cash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="I have a promo code!       "/>
+        <Button android:id="@+id/button_promo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apply"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/peach"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@id/address_block"
+            app:layout_constraintBottom_toTopOf="@id/button_cash"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <Button
+            android:id="@+id/button_cash"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/peach"
+            android:text="Cash"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_online"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_online"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/peach"
+            android:text="Online"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_cash" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_address_payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.65
+" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

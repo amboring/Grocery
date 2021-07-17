@@ -1,0 +1,27 @@
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent">
+    <include layout="@layout/app_bar"/>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/button_add_new_address"
+            android:text="Add new address"
+            android:drawableLeft="@drawable/ic_baseline_house_24"
+            android:backgroundTint="@color/peach"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/address_recycler_view"
+                android:layout_weight="10"/>
+    </LinearLayout>
+</LinearLayout>
